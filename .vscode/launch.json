@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch App Debug",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceRoot}/src-tauri/target/debug/taureria.exe",
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "dev",
+      "postDebugTask": "ui:dev:stop",
+      "stopOnEntry": false,
+      "console": "integratedTerminal",
+      "sourceLanguages": [
+        "rust"
+      ],
+      "env": {
+        "WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS": "--remote-debugging-port=1422",
+        "RUST_BACKTRACE": "1",
+        "RUST_LOG": "debug"
+      }
+    },
+    {
+      "name": "Attach to Webview",
+      "port": 1422,
+      "request": "attach",
+      "timeout": 300000,
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}/src"
+    },
+    {
+      "name": "Attach to Running Process",
+      "type": "lldb",
+      "request": "attach",
+      "pid": "${command:pickProcess}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Tauri Dev All",
+      "configurations": [
+        "Launch App Debug",
+        "Attach to Webview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "rust-analyzer.debug.openDebugPane": true,
+  "rust-analyzer.runnables.command": "cargo",
+  "rust-analyzer.checkOnSave": {
+    "command": "clippy",
+    "extraArgs": [
+      "--all-features"
+    ]
+  },
+  "debug.console.fontSize": 13,
+  "debug.console.lineHeight": 24,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "lldb.executable": "lldb",
+  "lldb.breakpointOnThrow": "all",
+  "lldb.breakpointOnCatch": false,
+  "lldb.displayFormat": "auto",
+  "lldb.showDisassembly": "auto"
+}

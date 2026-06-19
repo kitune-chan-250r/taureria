@@ -1,0 +1,8 @@
+node_modules/
+dist/
+build/
+target/
+.vscode/
+.git/
+*.config.js
+*.config.ts
